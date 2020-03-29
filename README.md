@@ -49,7 +49,7 @@ The raw data for this project is exclusively categorical.  Look in [encoding_fun
 ![Felony groups](figures/eda/conv_class.svg)
 
 
-![Type of felony]()
+![Type of felony](figures/eda/conv_bin.svg)
 
 ## feature engineering
    after pulling the raw data from the database, the data is converted to binary features with the code found in the data/feature_end.py file. none of the iowa data is numeric, not even age, which is provided as a range. therefore, i created dummy variables out of all features.
