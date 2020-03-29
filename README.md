@@ -44,12 +44,26 @@ The raw data for this project is exclusively categorical.  Look in [encoding_fun
 ![Race groups](figures/eda/race_binned.svg)]
 
 ## Offense classification
-> Offense classifications show large numbers of recidvism in C and D class felonies, which are less serious than B. However, looking at the percentages, the is not much difference in the rates across the groups with a significant number of records. 
+> Offense classifications show large numbers of recidvism in C and D class felonies, which are less serious than B. However, looking at the percentages, there is not much difference in the rates across the groups with a significant number of records. 
 
 ![Felony groups](figures/eda/conv_class.svg)
 
-
 ![Type of felony](figures/eda/conv_bin.svg)
+
+## Offense type
+
+![Offense Type](figures/eda/offense_type.svg)
+![Offense Type Recidivism](figures/eda/offense_type_recid.svg)
+
+## Offense subtype
+There is a lot of variance across conviction subtypes. 
+
+![Offense Subtype](figures/eda/off_subt_type.svg)
+![Offense Subtype Recidivism](figures/eda/offense_subtype_recid_norm.svg)
+
+I binned conviction types under 1%, yielding the distribution below:
+
+![Binned Subtype](figures/eda/offense_subtype_bin_norm.svg)
 
 ## feature engineering
    after pulling the raw data from the database, the data is converted to binary features with the code found in the data/feature_end.py file. none of the iowa data is numeric, not even age, which is provided as a range. therefore, i created dummy variables out of all features.
