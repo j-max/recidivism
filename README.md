@@ -1,7 +1,7 @@
 # prison_recidivism
 
 # Guiding questions
-1. What are the main factors which drive recidivism in the sample poplution?
+1. What are the main factors which drive recidivism in the sample population?
 2. Does recidivism rate mostly depend on individual characteristics or circumstance?
 3. How could fiscal resources be redirected in order to improve recidivism rates?
 
@@ -21,7 +21,6 @@ The raw data for this project is exclusively categorical.  Look in [encoding_fun
 
 ### Race 
 > Below, you will find the racial breakdown of the dataset. 
-> To simplify the model
 
 - White - Non-Hispanic                               0.676568
 - black - non-hispanic                               0.235052
@@ -35,7 +34,7 @@ The raw data for this project is exclusively categorical.  Look in [encoding_fun
 - n/a -                                              0.000192
 - black -                                            0.000077
 
-> After running chi2 tests and fitting a vanilla logit model,
+> After running [chi2 tests](eda/hypothesis_test.py) and fitting a vanilla [logit model](modeling/logistic_for_p.py),
 > many of the ethnicity groups did not show high statistical significance 
 > in relation to recidivism. 
 > With that in mind, along with simplifying the model for interpretation, 
@@ -43,6 +42,14 @@ The raw data for this project is exclusively categorical.  Look in [encoding_fun
 > After doing so, one can see that hispanic prisoners have significantly lower recidivism rates.
 
 ![Race groups](figures/eda/race_binned.svg)]
+
+## Offense classification
+> Offense classifications show large numbers of recidvism in C and D class felonies, which are less serious than B. However, looking at the percentages, the is not much difference in the rates across the groups with a significant number of records. 
+
+![Felony groups](figures/eda/conv_class.svg)
+
+
+![Type of felony]()
 
 ## feature engineering
    after pulling the raw data from the database, the data is converted to binary features with the code found in the data/feature_end.py file. none of the iowa data is numeric, not even age, which is provided as a range. therefore, i created dummy variables out of all features.
@@ -52,29 +59,6 @@ The raw data for this project is exclusively categorical.  Look in [encoding_fun
 ### notes on target and  individual features
 #### target
   * the dataset is imbalanced. of the 24,387 records left after reducing the dataset, 8,334 are marked as recidivist and 16,053 are not recidivist.  that is a ratio of 1.93 non-recidivists to each recidivist.  this imbalance will be addressed by random-oversampling in the training sets of the models (see modeling section).
-#### race
-     ```
-	 there are 11 racial categories in the raw dataset:
-		 race_american indian or alaska native - hispanic           20
-		 race_american indian or alaska native - non-hispanic      502
-		 race_asian or pacific islander - hispanic                   5
-		 race_asian or pacific islander - non-hispanic             192
-		 race_black -                                                2
-		 race_black - hispanic                                      37
-		 race_black - non-hispanic                                6109
-		 race_n/a -                                                  5
-		 race_white -                                               12
-		 race_white - hispanic                                    1522
-		 race_white - non-hispanic                               17584
-	 
-	 each record has only one category, so to make interpretation easier, i drop records not in the following  categories:
-	 race_american indian or alaska native - non-hispanic, 502
-	 race_asian or pacific islander - non-hispanic, 192
-	 race_black - non-hispanic, 6109
-	 race_white - non-hispanic, 17584
-	 
-	 i drop these either becasue the count is very small, or the individual identifies as having more than one race.
-
 	 ```
 ## modeling
   * logistic regression
