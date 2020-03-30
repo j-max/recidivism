@@ -102,9 +102,9 @@ The final data frame is created at the bottom of the .py file found [here](encod
 
 > Suprisingly, drunk driving, murder, and assault are all relatively low risk offenses with regard to recidivism.
 
- (-0.07286516544895118, 'OWI subtype_bin'),
- (-0.06079473187976615, 'Murder/Manslaughter subtype_bin'),
- (-0.05826636092262317, 'Assault subtype_bin'
+- (-0.07286516544895118, 'OWI subtype_bin'),
+- (-0.06079473187976615, 'Murder/Manslaughter subtype_bin'),
+- (-0.05826636092262317, 'Assault subtype_bin'
  
  > Burglary and Drug Possession are relatively high risk offenses with regard to recidivism.)
  
