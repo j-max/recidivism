@@ -72,13 +72,13 @@ I binned conviction types under 1%, yielding the distribution below:
 
 > After fitting multiple models on multiple dataframes with varying features, a logistic model trained with SMOTE with the following parameters performed best:
 
-
+<div>
 LogisticRegression(C=0.001, class_weight=None, dual=False, fit_intercept=True,
                    intercept_scaling=1, l1_ratio=None, max_iter=100,
                    multi_class='warn', n_jobs=None, penalty='l2',
                    random_state=None, solver='warn', tol=0.0001, verbose=0,
                    warm_start=False)
-
+</div>
 >I used SMOTE to increase the recall score.  Optimizing for recall, in the present study, is important.  False negatives are released persons who go back to prison, but the model predicts will not.  Optimizing to maximize recall allows the model to predict more recidivists at the price of more false positives.  
 
 > The final test recall score with the logistic models is .614
@@ -90,16 +90,16 @@ The final model is validated on the test set [here](modeling/best_model.py)
 The final data frame is created at the bottom of the .py file found [here](encoding_funcs.py)
 
 > The logistic coefficients provided interesting insight. The top 4 features which affected the odds of returning to prison were:
- (0.08457146166524078, 'white race_binned'),
- (0.08545200394168768, 'Male'),
- (0.10629229467964753, '25-34 Age At Release '),
- (0.10991550489541471, 'Under 25 Age At Release ')]
+- (0.08457146166524078, 'white race_binned')
+ - (0.08545200394168768, 'Male')
+ - (0.10629229467964753, '25-34 Age At Release ')
+ - (0.10991550489541471, 'Under 25 Age At Release ')
  
 > The bottom four were:
-(-0.18451047311957094, 'Violent Offense Type'),
- (-0.1641536600871613, 'hispanic race_binned'),
- (-0.1536984455163177, '55 and Older Age At Release '),
- (-0.13217072605206934, '45-54 Age At Release ')
+- (-0.18451047311957094, 'Violent Offense Type')
+- (-0.1641536600871613, 'hispanic race_binned')
+- (-0.1536984455163177, '55 and Older Age At Release ')
+- (-0.13217072605206934, '45-54 Age At Release ')
 
 > These paint a clear picture of which types of released persons are at risk for recidivism: Young, white males.
 > Older, hispanic prisoners are at less risk.  
