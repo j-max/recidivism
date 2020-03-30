@@ -72,13 +72,9 @@ I binned conviction types under 1%, yielding the distribution below:
 
 > After fitting multiple models on multiple dataframes with varying features, a logistic model trained with SMOTE with the following parameters performed best:
 
-<div>
-LogisticRegression(C=0.001, class_weight=None, dual=False, fit_intercept=True,
-                   intercept_scaling=1, l1_ratio=None, max_iter=100,
-                   multi_class='warn', n_jobs=None, penalty='l2',
-                   random_state=None, solver='warn', tol=0.0001, verbose=0,
-                   warm_start=False)
-</div>
+- C=0.001,
+- penalty='l2',
+
 >I used SMOTE to increase the recall score.  Optimizing for recall, in the present study, is important.  False negatives are released persons who go back to prison, but the model predicts will not.  Optimizing to maximize recall allows the model to predict more recidivists at the price of more false positives.  
 
 > The final test recall score with the logistic models is .614
@@ -112,5 +108,5 @@ The final data frame is created at the bottom of the .py file found [here](encod
  
  > Burglary and Drug Possession are relatively high risk offenses with regard to recidivism.)
  
-  (0.06046614558100768, 'Burglary subtype_bin'),
-  (0.039916315399109836, 'Drug Possession subtype_bin')
+  - (0.06046614558100768, 'Burglary subtype_bin'),
+  - (0.039916315399109836, 'Drug Possession subtype_bin')
