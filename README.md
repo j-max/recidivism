@@ -64,7 +64,7 @@ There is a lot of variance across conviction subtypes.
 I binned conviction types under 1%, yielding the distribution below:
 
 ![Binned Subtype](figures/eda/offense_subtype_bin_norm.svg)
-### notes on target and  individual features
+### notes on target
 #### target
   * the dataset is imbalanced. of the 24,387 records left after reducing the dataset, 8,334 are marked as recidivist and 16,053 are not recidivist.  that is a ratio of 1.93 non-recidivists to each recidivist.  This imbalance will be addressed by random-oversampling in the training sets of the models (see modeling section).
 	 ```
