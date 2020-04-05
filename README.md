@@ -106,7 +106,7 @@ The final data frame is created at the bottom of the .py file found [here](encod
 - (-0.06079473187976615, 'Murder/Manslaughter subtype_bin'),
 - (-0.05826636092262317, 'Assault subtype_bin'
  
- > Burglary and Drug Possession are relatively high risk offenses with regard to recidivism.)
+ > Burglary and Drug Possession are relatively high risk offenses with regard to recidivism.
  
   - (0.06046614558100768, 'Burglary subtype_bin'),
   - (0.039916315399109836, 'Drug Possession subtype_bin')
